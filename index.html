@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Калькулятор ужарки</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0d1117">
+  <style>
+    body { font-family: -apple-system, system-ui, sans-serif; max-width: 420px; margin:2rem auto; padding:1rem; color:#e6edf3; background:#0d1117; }
+    h1 { font-size:1.8rem; }
+    label { display:block; margin-top:1rem; }
+    input { width:100%; padding:0.5rem; font-size:1rem; border-radius:8px; border:1px solid #30363d; background:#161b22; color:#e6edf3; }
+    button { margin-top:1rem; padding:0.6rem 1rem; font-size:1rem; border-radius:8px; border:none; background:#238636; color:white; cursor:pointer; }
+    .result { font-size:1.5rem; margin-top:1rem; }
+    .history { margin-top:2rem; }
+    .item { border-bottom:1px solid #30363d; padding:0.5rem 0; }
+    small { color:#8b949e; }
+  </style>
+</head>
+<body>
+  <h1>Калькулятор ужарки</h1>
+  <label>Вес до (г)</label>
+  <input id="before" type="number" placeholder="например 1200">
+  <label>Вес после (г)</label>
+  <input id="after" type="number" placeholder="например 900">
+  <button id="calc">Посчитать</button>
+  <div class="result" id="result"></div>
+
+  <div class="history">
+    <h3>История</h3>
+    <div id="list"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
