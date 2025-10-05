@@ -5,17 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Калькулятор ужарки</title>
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#0d1117">
+  <meta name="theme-color" content="#f5f5f7">
   <style>
-    body { font-family: -apple-system, system-ui, sans-serif; max-width: 420px; margin:2rem auto; padding:1rem; color:#e6edf3; background:#0d1117; }
-    h1 { font-size:1.8rem; }
-    label { display:block; margin-top:1rem; }
-    input { width:100%; padding:0.5rem; font-size:1rem; border-radius:8px; border:1px solid #30363d; background:#161b22; color:#e6edf3; }
-    button { margin-top:1rem; padding:0.6rem 1rem; font-size:1rem; border-radius:8px; border:none; background:#238636; color:white; cursor:pointer; }
-    .result { font-size:1.5rem; margin-top:1rem; }
-    .history { margin-top:2rem; }
-    .item { border-bottom:1px solid #30363d; padding:0.5rem 0; }
-    small { color:#8b949e; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 420px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background: #f5f5f7;
+      color: #1c1c1e;
+    }
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    label {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-top: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+    input {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      font-size: 1rem;
+      border-radius: 12px;
+      border: 1px solid #d1d1d6;
+      background: #fff;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      margin-top: 1.4rem;
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 12px;
+      border: none;
+      background: #007aff;
+      color: white;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover { background: #005ecb; }
+    .result {
+      font-size: 1.4rem;
+      text-align: center;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+    .portion-block {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .portion-result {
+      margin-top: 0.6rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+      text-align: center;
+      color: #007aff;
+    }
+    .history {
+      margin-top: 2rem;
+    }
+    .history h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .item {
+      background: #fff;
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .item strong { font-size: 1rem; }
+    small { color: #8e8e93; font-size: 0.8rem; }
   </style>
 </head>
 <body>
@@ -26,6 +99,12 @@
   <input id="after" type="number" placeholder="например 900">
   <button id="calc">Посчитать</button>
   <div class="result" id="result"></div>
+
+  <div class="portion-block" id="portionBlock" style="display:none;">
+    <label>Сколько я съем (г готового):</label>
+    <input id="portion" type="number" placeholder="например 200">
+    <div class="portion-result" id="portionResult"></div>
+  </div>
 
   <div class="history">
     <h3>История</h3>
